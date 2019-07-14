@@ -26,9 +26,9 @@ class ClientBase:
 
     def get_statements(self, account: str, from_time: Time, to_time: Time = '') -> List[dict]:
         if isinstance(from_time, dt.datetime):
-            from_time = from_time.timestamp()
+            from_time = int(from_time.timestamp())
         if isinstance(to_time, dt.datetime):
-            to_time = to_time.timestamp()
+            to_time = int(to_time.timestamp())
 
         url = MONOBANK_API_STATEMENTS_ENDPOINT.format(account=account, from_timestamp=from_time, to_timestamp=to_time)
         return utils.json_request(url=url, headers=self._get_headers())
