@@ -5,7 +5,7 @@ with open('README.md') as f:
     long_description = f.read()
 
 
-setup(name='monoback_client',
+setup(name='monobank_client',
       version='0.0.1',
       description='Monobank API client',
       long_description=long_description,
