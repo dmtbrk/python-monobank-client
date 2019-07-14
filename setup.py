@@ -1,12 +1,25 @@
-from setuptools import setup
+from setuptools import setup, find_packages
+
+
+with open('README.md') as f:
+    long_description = f.read()
 
 
 setup(name='monoback_client',
-      version='0.1.0',
+      version='0.0.1',
       description='Monobank API client',
-      url='https://github.com/ortymid/python-monobank-client',
+      long_description=long_description,
+      long_description_content_type='text/markdown',
       author='Dmytro Brykovets',
       author_email='dmytro.brykovets@gmail.com',
-      license='MIT',
-      packages='monobank_client',
+      url='https://github.com/ortymid/python-monobank-client',
+      packages=find_packages(),
+      classifiers=[
+            'Programming Language :: Python :: 3',
+            'License :: OSI Approved :: MIT License',
+            'Operating System :: OS Independent',
+      ],
+      install_requires=[
+            'requests',
+      ],
       zip_safe=False)
